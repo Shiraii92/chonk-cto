@@ -176,11 +176,8 @@ a {
 a:hover { 
     color: var(--linkhover-color);
 }
+
 .flex{
-    display: flex;
-    align-items: center;
-}
-.flex-2{
     display: flex;
 }
 .success-msg {
@@ -251,64 +248,34 @@ nav a {
 .logo{
     width: 100px;
 }
-@media screen and (min-width: 768px){
-/* PC時はMENUボタンを非表示 */
-#open,#close {
-    display: none !important;
+
+.Flip-Logo{
+    width: 5%;
+    height: 5%;
+    margin-top: 0 rem;
+}
+@media (max-width: 640px){
+    .Flip-Logo{
+        width:15%;
+        height:15%;
+    }
 }
 
-#navi {
-    display: block !important;
+
+@media (min-width: 768px) {
+    .Flip-Logo{
+        width:10%;
+        height:10%;
 }
 }
 
-@media screen and (max-width: 768px){
-.header {
-	flex-direction: column;
-    margin-bottom: 10px;
-}
-.header #open,#close  {
-    position: absolute;
-    top: 20px;
-    right: 12px;
-}
-nav ul {
-	flex-direction: column;
-}
-.header li {
-	padding-top: 0;
-}
-/* スマホ時はMENUボタンを表示 */
-#open {
-    display: block;
-    background: url(../img/button.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
-    border: none;
-    position: absolute;
-    top: 20px;
-    right: 12px;
-}
-#close  {
-    display: block;
-    background: url(../img/button2.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
-    border: none;
-    position: absolute;
-    top: 20px;
-    right: 12px;
-}
-/* スマホ時はメニューを非表示 */
-#navi {
-    display: none;
+@media (min-width: 1024px) {
+    .Flip-Logo{
+        width:5%;
+        height:5%;
 }
 }
-    
+
 /*メイン画像
 -------------------------------------*/
 .mainimg{
@@ -332,9 +299,8 @@ nav ul {
 
 /*メインコンテンツ
 -------------------------------------*/
-.body-container{
+.container{
     width: 100%;
-    padding: 0 20px;
 }
 main {
     margin: 5rem 0 0 0;
@@ -495,6 +461,36 @@ svg{
     position: relative
 }
 
+@media (min-width: 640px) {
+    .container {
+        max-width:640px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width:1024px
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width:1280px
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width:1536px
+    }
+}
+
 
 .pointer-events-none {
     pointer-events: none
@@ -518,11 +514,11 @@ svg{
 }
 
 .-right-80 {
-    right: -20rem
+    right: 20rem
 }
 
 .-top-80 {
-    top: -20rem
+    top: 50rem
 }
 
 .bottom-0 {
@@ -546,7 +542,7 @@ svg{
 }
 
 
-.z-\[155\] {
+.z-155 {
     z-index: 155
 }
 
@@ -581,6 +577,9 @@ svg{
 
 .hidden {
     display: none
+}
+.visible{
+    display: block;
 }
 
 .h-0 {
@@ -825,15 +824,15 @@ svg{
 }
 
 .bg-lyllw\/40 {
-    background-color: #0244a566
+    background-color: #02a52db3
 }
 
 .bg-lyllw\/50 {
-    background-color: #0244a580
+    background-color: #02a52db3
 }
 
 .bg-lyllw\/70 {
-    background-color: #0244a5b3
+    background-color: #02a52db3
 }
 
 .bg-white {
@@ -864,6 +863,7 @@ svg{
 .bg-gradient-to-tr {
     background-image: linear-gradient(to top right,var(--tw-gradient-stops))
 }
+
 
 .from-blk {
     --tw-gradient-from: #1E1E1E var(--tw-gradient-from-position);
@@ -919,6 +919,12 @@ svg{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
 
+.from-yllw\/60 {
+    --tw-gradient-from: rgba(135, 139, 140, 0.075) 
+    --tw-gradient-to: rgba(64, 68, 68, 0)
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
 .from-yllw\/50 {
     --tw-gradient-from: rgba(6, 123, 29, 0.934);
     --tw-gradient-to: rgba(16, 244, 96, 0);
@@ -944,6 +950,11 @@ svg{
 .to-lyllw\/30 {
     --tw-gradient-to: rgb(2 68 165 / .3) var(--tw-gradient-to-position)
 }
+
+.to-lyllw\/60 {
+    --tw-gradient-to: rgb(2 68 165 / .3)
+}
+
 
 .to-lyllw\/50 {
     --tw-gradient-to:rgb(42, 245, 11, 0.5)
@@ -1063,6 +1074,25 @@ svg{
     line-height: 2rem
 }
 
+.parent-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px; /* Adjust the gap between items as needed */
+}
+
+.child-div {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .child-div.hidden.md\\:flex {
+        display: none;
+    }
+}
+
+
 .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem
@@ -1097,12 +1127,35 @@ svg{
     width: 25px;
     height: auto;
 }
-
+.dexscreener-logo{
+    width: 30px;
+    height: auto;
+}
 
 .uniswap-logo{
     width: 32px;
     height: auto;
 }
+
+.stonfi-logo{
+    width: 30px;
+    height: auto;
+}
+
+.address-to-copy {
+    font-size: 16px;
+    
+}
+
+.copy-button{
+    border: solid;
+}
+
+.raydium-logo{
+    width: 25px;
+    height: auto;
+}
+
 
 .telegram-logo{
     width: 20px;
@@ -1129,6 +1182,84 @@ svg{
 .bcc-logo{
     width: 22px;
     height: auto;
+}
+
+
+@media (max-width: 640px) {
+    .bcc-logo {
+        width: 15px;
+        height: auto;
+    }
+    .x-logo2{
+        width: 40px;
+        height: auto;
+    }
+    .telegram-logo2{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .bcc-logo {
+        width: 15px;
+        height: auto;
+    }
+    .x-logo2{
+        width: 40px;
+        height: auto;
+    }
+    .telegram-logo2{
+        width: 40px;
+        height: auto;
+    }
+    }
+
+
+@media (min-width: 1024px) {
+    .bcc-logo {
+        width: 22px;
+        height: auto;
+    }
+    .x-logo2{
+        width: 70px;
+        height: auto;
+    }
+    .telegram-logo2{
+        width: 70px;
+        height: auto;
+    }
+    }
+
+
+@media (min-width: 1280px) {
+    .bcc-logo {
+        width: 22px;
+        height: auto;
+    }
+    .x-logo2{
+        width: 70px;
+        height: auto;
+    }
+    .telegram-logo2{
+        width: 70px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1536px) {
+    .bcc-logo {
+        width: 22px;
+        height: auto;
+    }
+    .x-logo2{
+        width: 70px;
+        height: auto;
+    }
+    .telegram-logo2{
+        width: 70px;
+        height: auto;
+    }
 }
 
 .footer{
@@ -1258,22 +1389,11 @@ svg{
 
 /*ページトップへ戻るボタン
 -------------------------------------*/
-#pagetop {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
+
+#notification {
+    position: fixed; /* Keeps it fixed during scrolling */
 }
-#pagetop a {
-    display: block;
-    background-color: var(--base-color);
-    color: var(--white-color);
-    width: 50px;
-    padding: 10px 5px;
-    text-align: center;
-}
-#pagetop a:hover {
-    background-color: var(--link-color);
-}
+
 
 .hover\:rotate-\[-25deg\]:hover {
     --tw-rotate: -25deg;
@@ -1308,6 +1428,12 @@ svg{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
 
+.hover\:from-yllw\/60:hover {
+    --tw-gradient-from: rgb(300 200 213 / .2) 
+    --tw-gradient-to: rgb(359 233 213 / 0) 
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
 .hover\:from-yllw\/40:hover {
     --tw-gradient-from: rgb(109 203 213 / .4) var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(109 203 213 / 0) var(--tw-gradient-to-position);
@@ -1330,6 +1456,10 @@ svg{
     --tw-gradient-to: rgb(109 203 213 / .3) var(--tw-gradient-to-position)
 }
 
+.hover\:to-yllw\/60:hover {
+    --tw-gradient-to: rgb( 109 203 213 / .4)
+}
+
 .hover\:text-gry:hover {
     --tw-text-opacity: 1;
     color: rgb(69 69 69 / var(--tw-text-opacity))
@@ -1345,22 +1475,261 @@ svg{
     transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
-/* 幅768px以下の表示
--------------------------------------*/
-@media screen and (max-width: 768px){
-	
-/*ヘッダー
--------------------------------------*/
-.header-box {
-	display: none;
-}	
-/*お問い合わせ
--------------------------------------*/
-.table th {
-	width: 100%;
-	display: block;
-}	
-.table td {
-	display: block;
+
+
+@media (min-width: 640px) {
+    .sm\:flex-row {
+        flex-direction:row
+    }
 }
+
+@media (min-width: 768px) {
+    .md\:grid-cols-3 {
+        grid-template-columns:repeat(2,minmax(0,1fr))
+    }
+
+    .md\:flex-row {
+        flex-direction: row
+    }
+
+    .md\:gap-4 {
+        gap: 1rem
+    }
+
+    .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1
+    }
+
+    .md\:text-7xl {
+        font-size: 4.5rem;
+        line-height: 1
+    }
+
+    .md\:text-8xl {
+        font-size: 6rem;
+        line-height: 1
+    }
 }
+
+@media (min-width: 1024px) {
+    .lg\:block {
+        display:block
+    }
+
+    .lg\:flex {
+        display: flex
+    }
+
+    .lg\:w-1\/2 {
+        width: 50%
+    }
+
+    .lg\:max-w-lg {
+        max-width: 32rem
+    }
+
+    .lg\:grid-cols-5 {
+        grid-template-columns: repeat(5,minmax(0,1fr))
+    }
+
+    .lg\:flex-row {
+        flex-direction: row
+    }
+
+    .lg\:items-start {
+        align-items: flex-start
+    }
+
+    .lg\:justify-start {
+        justify-content: flex-start
+    }
+
+    .lg\:px-12 {
+        padding-left: 3rem;
+        padding-right: 3rem
+    }
+
+    .lg\:px-24 {
+        padding-left: 6rem;
+        padding-right: 6rem
+    }
+
+    .lg\:py-12 {
+        padding-top: 3rem;
+        padding-bottom: 3rem
+    }
+
+    .lg\:py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem
+    }
+
+    .lg\:text-left {
+        text-align: left
+    }
+
+    .lg\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem
+    }
+
+    .lg\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1
+    }
+
+    .lg\:text-9xl {
+        font-size: 8rem;
+        line-height: 1
+    }
+
+    .lg\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem
+    }
+
+    .lg\:leading-\[5rem\] {
+        line-height: 5rem
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\:p-20 {
+        padding:5rem
+    }
+}
+
+/* Dropdown-Menü-Stil */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+
+
+  .dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background: none;
+    border: none;
+    height: 100%;
+    padding: 3px 6px 3px 14px;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 535;
+    transition-duration: 125ms;
+    outline: none;
+}
+
+/* CSS für das Logo */
+.btnsize {
+    height: 36px;
+    width: 36px;
+}
+.btnlogo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Abstand zwischen Logo und Pfeil */
+}
+/* CSS für die Ketteninformationen */
+.chain-info {
+    display: flex;
+    align-items: center; /* Inhalt vertikal zentrieren */
+}
+
+/* CSS für den Chain-Namen */
+.chain-name {
+    margin-right: 20px; /* Abstand zwischen Chain-Namen und Checkmark */
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    border-radius: 24px;
+    margin-top: 8px; /* Abstand zum Button */
+    width: 250px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.733);
+  }
+  .dropdown-content.open {
+    display: block;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+  
+ 
+  
+/* Pfeilanimation */
+.arrow {
+    position: absolute;
+    margin-left: 8px;
+    top: 50%;
+    right: 10px; /* Abstand zum Button */
+    transform: translateY(-50%) rotate(0deg); /* Anfangsrotation */
+    transition: transform 0.3s; /* Übergang für die Pfeilrotation */
+  }
+  
+  .arrow i {
+    font-size: 12px; /* Größe des Pfeils anpassen */
+    color: #555; /* Farbe des Pfeils */
+  }
+  
+  .arrow i.rotate {
+    animation: rotateAnimation 0.3s ease forwards; /* Animation für die Rotation */
+  }
+  
+  .arrow i.reverse-rotate {
+    animation: reverseRotateAnimation 0.3s ease forwards; /* Animation für die Rückwärtsrotation */
+  }
+  
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg); /* Anfangsrotation */
+    }
+    100% {
+      transform: rotate(180deg); /* Endrotation */
+    }
+  }
+  
+  @keyframes reverseRotateAnimation {
+    0% {
+      transform: rotate(180deg); /* Anfangsrotation */
+    }
+    100% {
+      transform: rotate(0deg); /* Endrotation */
+    }
+  }
+  
+  
+  /* Checkmark-Stil */
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Abstand zum Text */
+    transform: translateY(-50%);
+    display: none;
+    margin-right: 10px;
+    color: #0df73f; /* Farbe des Hakens */
+  }
+  
+  
+  
+  /* Stil für die Blockchain-Ansicht */
+  .blockchainView {
+    display: none;
+  }
+  
