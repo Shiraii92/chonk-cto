@@ -1270,6 +1270,11 @@ svg{
     text-shadow: -5px -5px 0 #00ff59,-5px 5px 0 #00ff59,-5px 5px 0 #00ff59,5px 5px 0 #00ff59,-5px 0 0 #00ff59,5px 0 0 #00ff59,0 -5px 0 #00ff59,0 5px 0 #00ff59
 }
 
+.text-stroke-ton {
+    color: #fff;
+    text-shadow: -5px -5px 0 #00a6ff,-5px 5px 0 #00a6ff,-5px 5px 0 #00a6ff,5px 5px 0 #00a6ff,-5px 0 0 #00a6ff,5px 0 0 #00a6ff,0 -5px 0 #00a6ff,0 5px 0 #00a6ff
+}
+
 .text-stroke-sm {
     color: #ffffff;
     text-shadow: -2px -2px 0 #00ff59,2px -2px 0 #00ff59,-2px 2px 0 #00ff59,2px 2px 0 #00ff59,-2px 0 0 #00ff59,2px 0 0 #00ff59,0 -2px 0 #00ff59,0 2px 0 #00ff59
